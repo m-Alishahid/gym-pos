@@ -1,0 +1,117 @@
+@import "tailwindcss";
+
+/* Import theme configuration - Edit src/lib/theme.ts to change the entire theme */
+@import url('./theme.css');
+
+:root {
+  /* Light theme colors */
+  --background: var(--theme-neutral-background-light);
+  --foreground: var(--theme-neutral-foreground-light);
+  --card: var(--theme-neutral-background-light);
+  --card-foreground: var(--theme-neutral-foreground-light);
+  --popover: var(--theme-neutral-background-light);
+  --popover-foreground: var(--theme-neutral-foreground-light);
+  --primary: var(--theme-primary-hsl);
+  --primary-foreground: 210 40% 98%;
+  --secondary: var(--theme-neutral-muted-light);
+  --secondary-foreground: var(--theme-neutral-foreground-light);
+  --muted: var(--theme-neutral-muted-light);
+  --muted-foreground: 215.4 16.3% 46.9%;
+  --accent: var(--theme-accent-hsl);
+  --accent-foreground: var(--theme-neutral-foreground-light);
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 210 40% 98%;
+  --border: var(--theme-neutral-border-light);
+  --input: var(--theme-neutral-border-light);
+  --ring: var(--theme-primary-hsl);
+  --radius: var(--theme-radius-lg);
+  --neon-green: var(--theme-secondary-hsl);
+}
+
+.dark {
+  /* Dark theme colors */
+  --background: var(--theme-neutral-background-dark);
+  --foreground: var(--theme-neutral-foreground-dark);
+  --card: var(--theme-neutral-background-dark);
+  --card-foreground: var(--theme-neutral-foreground-dark);
+  --popover: var(--theme-neutral-background-dark);
+  --popover-foreground: var(--theme-neutral-foreground-dark);
+  --primary: var(--theme-primary-hsl);
+  --primary-foreground: var(--theme-neutral-foreground-dark);
+  --secondary: var(--theme-neutral-muted-dark);
+  --secondary-foreground: var(--theme-neutral-foreground-dark);
+  --muted: var(--theme-neutral-muted-dark);
+  --muted-foreground: 215 20.2% 65.1%;
+  --accent: var(--theme-accent-hsl);
+  --accent-foreground: var(--theme-neutral-foreground-dark);
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: var(--theme-neutral-foreground-dark);
+  --border: var(--theme-neutral-border-dark);
+  --input: var(--theme-neutral-border-dark);
+  --ring: var(--theme-primary-hsl);
+}
+
+@theme inline {
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+  --color-neon-green: hsl(var(--neon-green));
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 4px);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+* {
+  border-color: var(--color-border);
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  font-feature-settings: "rlig" 1, "calt" 1;
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.dark .glass {
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.text-gradient {
+  background: linear-gradient(to right, #ffffff, #a1a1aa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.neon-border {
+  border: 1px solid var(--color-neon-green);
+  box-shadow: 0 0 10px rgba(34, 197, 94, 0.3);
+}
+
+.neon-glow {
+  text-shadow: 0 0 10px rgba(34, 197, 94, 0.5);
+}

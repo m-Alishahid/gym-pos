@@ -1,0 +1,74 @@
+/* Theme Configuration - Auto-generated from src/lib/theme.ts */
+/* To change the theme, edit src/lib/theme.ts and rebuild */
+
+:root {
+  /* Primary Colors */
+  --theme-primary-hsl: 217 91% 60%;
+  --theme-primary-color: hsl(217, 91%, 60%);
+
+  /* Secondary Colors */
+  --theme-secondary-hsl: 142 71% 45%;
+  --theme-secondary-color: hsl(142, 71%, 45%);
+
+  /* Accent Colors */
+  --theme-accent-hsl: 34 100% 50%;
+  --theme-accent-color: hsl(34, 100%, 50%);
+
+  /* Neutral Colors - Light Theme */
+  --theme-neutral-background-light: 0 0% 100%;
+  --theme-neutral-foreground-light: 222 84% 5%;
+  --theme-neutral-muted-light: 210 40% 96%;
+  --theme-neutral-border-light: 214 32% 91%;
+
+  /* Neutral Colors - Dark Theme */
+  --theme-neutral-background-dark: 222 84% 5%;
+  --theme-neutral-foreground-dark: 210 40% 98%;
+  --theme-neutral-muted-dark: 217 33% 17%;
+  --theme-neutral-border-dark: 217 33% 17%;
+
+  /* Typography */
+  --theme-font-sans: 'Geist', system-ui, sans-serif;
+  --theme-font-mono: 'Geist Mono', monospace;
+
+  /* Font Sizes */
+  --theme-font-size-xs: 0.75rem;
+  --theme-font-size-sm: 0.875rem;
+  --theme-font-size-base: 1rem;
+  --theme-font-size-lg: 1.125rem;
+  --theme-font-size-xl: 1.25rem;
+  --theme-font-size-2xl: 1.5rem;
+  --theme-font-size-3xl: 1.875rem;
+  --theme-font-size-4xl: 2.25rem;
+  --theme-font-size-5xl: 3rem;
+  --theme-font-size-6xl: 3.75rem;
+
+  /* Spacing */
+  --theme-spacing-xs: 0.25rem;
+  --theme-spacing-sm: 0.5rem;
+  --theme-spacing-md: 1rem;
+  --theme-spacing-lg: 1.5rem;
+  --theme-spacing-xl: 2rem;
+  --theme-spacing-2xl: 3rem;
+  --theme-spacing-3xl: 4rem;
+
+  /* Border Radius */
+  --theme-radius-sm: 0.25rem;
+  --theme-radius-md: 0.5rem;
+  --theme-radius-lg: 0.75rem;
+  --theme-radius-xl: 1rem;
+  --theme-radius-2xl: 1.5rem;
+  --theme-radius-full: 9999px;
+
+  /* Effects */
+  --theme-glass-background: rgba(255, 255, 255, 0.05);
+  --theme-glass-backdrop-blur: 10px;
+  --theme-glass-border: 1px solid rgba(255, 255, 255, 0.1);
+  --theme-neon-glow: 0 0 10px rgba(34, 197, 94, 0.3);
+  --theme-neon-text-shadow: 0 0 10px rgba(34, 197, 94, 0.5);
+
+  /* Animations */
+  --theme-animation-duration-fast: 150ms;
+  --theme-animation-duration-normal: 300ms;
+  --theme-animation-duration-slow: 500ms;
+  --theme-animation-easing: cubic-bezier(0.4, 0, 0.2, 1);
+}

@@ -4,6 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import { MOCK_PRODUCTS } from "@/lib/data";
 import { Plus, Minus, Receipt, Printer, X, CreditCard, DollarSign, Smartphone, Search, Package, Trash2, Sparkles, ArrowRight } from "lucide-react";
+import { toast } from "@/components/Toast";
 
 interface CartItem {
   productId: string;
@@ -42,9 +43,10 @@ export default function BillingPage() {
       }
       return [...prev, { productId, name, price, quantity: 1, image, category }];
     });
+    toast.success(`${name} added to cart`);
   };
 
-  const removeFromCart = (productId: string) => {
+  const removeFromCart = (productId: string, name: string) => {
     setCart(prev => {
       const existing = prev.find(item => item.productId === productId);
       if (existing && existing.quantity > 1) {
@@ -56,13 +58,18 @@ export default function BillingPage() {
       }
       return prev.filter(item => item.productId !== productId);
     });
+    toast.info(`${name} removed from cart`);
   };
 
-  const removeItem = (productId: string) => {
+  const removeItem = (productId: string, name: string) => {
     setCart(prev => prev.filter(item => item.productId !== productId));
+    toast.info(`${name} removed from cart`);
   };
 
-  const clearCart = () => setCart([]);
+  const clearCart = () => {
+    setCart([]);
+    toast.info("Cart cleared");
+  };
 
   const subtotal = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
   const tax = subtotal * 0.08;
@@ -70,7 +77,7 @@ export default function BillingPage() {
 
   const handleGenerateBill = () => {
     if (cart.length === 0) {
-      alert("Please add items to cart first!");
+      toast.warning("Please add items to cart first!");
       return;
     }
     setShowBillForm(true);
@@ -86,7 +93,7 @@ export default function BillingPage() {
       date: new Date().toISOString(),
     };
     console.log("Generated Bill:", bill);
-    alert(`Bill generated for ${customerName}! Total: $${total.toFixed(2)}`);
+    toast.success(`Bill generated for ${customerName}! Total: $${total.toFixed(2)}`);
     setShowBillForm(false);
     setCustomerName("");
     setPaymentMethod("cash");
@@ -261,7 +268,7 @@ export default function BillingPage() {
                     </div>
                     <div className="flex items-center gap-2">
                       <button
-                        onClick={() => removeFromCart(item.productId)}
+                        onClick={() => removeFromCart(item.productId, item.name)}
                         className="p-1.5 bg-red-500/20 text-red-500 rounded-lg hover:bg-red-500/30 transition-all duration-300"
                       >
                         <Minus className="w-4 h-4" />

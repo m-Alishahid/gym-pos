@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Titan Gym | Premium Fitness & POS",
+  title: "GYM PRO | Premium Fitness & POS",
   description: "Experience the elite gym management and fitness experience.",
 };
 
@@ -25,9 +25,9 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased selection:bg-primary selection:text-primary-foreground`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased selection:bg-primary selection:text-primary-foreground bg-h-[var(--theme-neutral-background-dark)]`}
       >
-        <main className="min-h-screen bg-background text-foreground">
+        <main className="min-h-screen">
           {children}
         </main>
       </body>

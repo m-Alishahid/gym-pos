@@ -2,47 +2,47 @@
 // Change these values to customize the entire app's appearance
 
 export const theme = {
-  // Primary Colors
+  // Primary Colors - Vibrant Purple/Pink
   primary: {
-    hue: 217,
-    saturation: 91,
-    lightness: 60,
-    name: 'blue'
+    hue: 270,
+    saturation: 85,
+    lightness: 55,
+    name: 'purple'
   },
 
-  // Secondary Colors
+  // Secondary Colors - Cyan/Teal
   secondary: {
-    hue: 142,
-    saturation: 71,
-    lightness: 45,
-    name: 'green'
+    hue: 180,
+    saturation: 90,
+    lightness: 50,
+    name: 'cyan'
   },
 
-  // Accent Colors
+  // Accent Colors - Hot Pink
   accent: {
-    hue: 34,
-    saturation: 100,
-    lightness: 50,
-    name: 'orange'
+    hue: 320,
+    saturation: 90,
+    lightness: 55,
+    name: 'pink'
   },
 
   // Neutral Colors
   neutral: {
     background: {
       light: '0 0% 100%',
-      dark: '222 84% 5%'
+      dark: '250 25% 8%'  // Deep dark purple/black
     },
     foreground: {
-      light: '222 84% 5%',
+      light: '210 40% 98%',
       dark: '210 40% 98%'
     },
     muted: {
       light: '210 40% 96%',
-      dark: '217 33% 17%'
+      dark: '250 20% 15%'
     },
     border: {
       light: '214 32% 91%',
-      dark: '217 33% 17%'
+      dark: '250 20% 20%'
     }
   },
 
@@ -90,13 +90,13 @@ export const theme = {
   // Effects
   effects: {
     glass: {
-      background: 'rgba(255, 255, 255, 0.05)',
-      backdropBlur: '10px',
-      border: '1px solid rgba(255, 255, 255, 0.1)'
+      background: 'rgba(255, 255, 255, 0.03)',
+      backdropBlur: '12px',
+      border: '1px solid rgba(255, 255, 255, 0.08)'
     },
     neon: {
-      glow: '0 0 10px rgba(34, 197, 94, 0.3)',
-      textShadow: '0 0 10px rgba(34, 197, 94, 0.5)'
+      glow: '0 0 15px rgba(139, 92, 246, 0.4)',
+      textShadow: '0 0 10px rgba(139, 92, 246, 0.5)'
     }
   },
 

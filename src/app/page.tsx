@@ -6,6 +6,7 @@ import { ServicesSection } from "@/components/ServicesSection";
 import { MembershipSection } from "@/components/MembershipSection";
 import { TrainersSection } from "@/components/TrainersSection";
 import { ContactSection } from "@/components/ContactSection";
+import { Footer } from "@/components/Footer";
 
 export default function Home() {
   return (
@@ -23,13 +24,17 @@ export default function Home() {
         <div className="absolute inset-0 bg-[linear-gradient(rgba(139,92,246,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(139,92,246,0.03)_1px,transparent_1px)] bg-[size:60px_60px]" />
       </div>
 
-      <HeroSection />
-      <StatsSection />
-      <FeaturesSection />
-      <ServicesSection />
-      <MembershipSection />
-      <TrainersSection />
-      <ContactSection />
+      <main>
+        <HeroSection />
+        <StatsSection />
+        <section id="features"><FeaturesSection /></section>
+        <section id="services"><ServicesSection /></section>
+        <section id="membership"><MembershipSection /></section>
+        <section id="trainers"><TrainersSection /></section>
+        <section id="contact"><ContactSection /></section>
+      </main>
+      
+      <Footer />
     </div>
   );
 }

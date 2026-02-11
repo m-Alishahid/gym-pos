@@ -1,9 +1,12 @@
+"use client";
+
 import { Card } from "@/components/Card";
-import { MOCK_SALES } from "@/lib/data";
-import { DollarSign, FileDown, Calendar } from "lucide-react";
+import { useAppContext } from "@/context/AppContext";
+import { FileDown, Calendar } from "lucide-react";
 
 export default function SalesPage() {
-    const totalSales = MOCK_SALES.reduce((acc, s) => acc + s.total, 0);
+    const { sales } = useAppContext();
+    const totalSales = sales.reduce((acc, s) => acc + s.total, 0);
 
     return (
         <div className="space-y-8">
@@ -24,7 +27,7 @@ export default function SalesPage() {
                         <Calendar className="w-5 h-5" />
                         <span className="text-xs font-bold uppercase">Current Period</span>
                     </div>
-                    <p className="text-lg font-black italic">March 2024</p>
+                    <p className="text-lg font-black italic">{new Date().toLocaleString('default', { month: 'long', year: 'numeric' })}</p>
                 </Card>
             </div>
 
@@ -41,9 +44,9 @@ export default function SalesPage() {
                             </tr>
                         </thead>
                         <tbody className="divide-y divide-white/5">
-                            {MOCK_SALES.map((sale) => (
+                            {[...sales].reverse().map((sale) => (
                                 <tr key={sale.id} className="group hover:bg-white/5 transition-colors">
-                                    <td className="py-4 px-2 font-mono text-xs">TXN-{sale.id.toUpperCase()}</td>
+                                    <td className="py-4 px-2 font-mono text-xs uppercase">TXN-{sale.id.slice(-6)}</td>
                                     <td className="py-4 px-2 text-sm">{sale.date}</td>
                                     <td className="py-4 px-2">
                                         <span className={`text-[10px] font-black px-2 py-1 rounded-full uppercase ${sale.type === 'membership' ? 'bg-blue-500/10 text-blue-500' : 'bg-green-500/10 text-green-500'
@@ -60,6 +63,11 @@ export default function SalesPage() {
                                     </td>
                                 </tr>
                             ))}
+                            {sales.length === 0 && (
+                                <tr>
+                                    <td colSpan={5} className="py-20 text-center italic text-muted-foreground text-xs font-bold uppercase"> No transactions recorded yet</td>
+                                </tr>
+                            )}
                         </tbody>
                     </table>
                 </div>
